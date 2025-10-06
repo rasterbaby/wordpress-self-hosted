@@ -12,6 +12,7 @@ It is pre-configured to join a shared Docker network, allowing easy integration 
 -   Pre-configured for a shared network for easy inter-service communication.
 -   Includes helper scripts for easy management (`restart-docker.sh`, `update-docker.sh`).
 -   Includes a `backup.sh` script for creating compressed database backups.
+-   Includes a sample `Caddyfile` for use with a reverse proxy.
 
 ## Getting Started
 
