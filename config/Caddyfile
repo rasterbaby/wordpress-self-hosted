@@ -11,6 +11,9 @@ blog.example.com {
 
 # phpMyAdmin service.
 pma.example.com {
+	# Prevents search engines from indexing this site.
+	header X-Robots-Tag "noindex, nofollow"
+
 	reverse_proxy pma:80 {
 		flush_interval -1
 	}
