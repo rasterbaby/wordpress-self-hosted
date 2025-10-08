@@ -1,5 +1,7 @@
 # WordPress Self-Hosted with Docker
 
+![wordpress-self-hosted](https://repository-images.githubusercontent.com/1070471675/fa9106df-8efd-4e28-82c3-a363e5164e0d)
+
 This repository provides a `docker compose` setup to run a self-hosted [WordPress](https://wordpress.org/) instance, complete with a [MySQL](https://www.mysql.com/) database, [phpMyAdmin](https://www.phpmyadmin.net/), and [WP-CLI](https://wp-cli.org/).
 
 It is pre-configured to join a shared Docker network, allowing easy integration with other services like [n8n](https://github.com/AiratTop/n8n-self-hosted).
