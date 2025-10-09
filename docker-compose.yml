@@ -30,7 +30,7 @@ services:
         condition: service_healthy
     volumes:
       - ./data/wp:/var/www/html
-      - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini:ro
     environment:
       WORDPRESS_DB_HOST: wp-db
       WORDPRESS_DB_USER: ${MYSQL_USER}
@@ -48,7 +48,7 @@ services:
         condition: service_started
     volumes:
       - ./data/wp:/var/www/html
-      - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini:ro
     environment:
       WORDPRESS_DB_HOST: wp-db
       WORDPRESS_DB_USER: ${MYSQL_USER}
@@ -66,7 +66,7 @@ services:
       wp-db:
         condition: service_healthy
     volumes:
-      - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini:ro
     environment:
       PMA_HOST: wp-db
       PMA_PORT: 3306
