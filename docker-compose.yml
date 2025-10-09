@@ -8,10 +8,10 @@ services:
     volumes:
       - ./data/wp-db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PWD}
-      - MYSQL_DATABASE=${MYSQL_DB}
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PWD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PWD}
+      MYSQL_DATABASE: ${MYSQL_DB}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PWD}
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$${MYSQL_ROOT_PWD}']
       interval: 10s
@@ -32,10 +32,10 @@ services:
       - ./data/wp:/var/www/html
       - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini
     environment:
-      - WORDPRESS_DB_HOST=wp-db
-      - WORDPRESS_DB_USER=${MYSQL_USER}
-      - WORDPRESS_DB_PASSWORD=${MYSQL_PWD}
-      - WORDPRESS_DB_NAME=${MYSQL_DB}
+      WORDPRESS_DB_HOST: wp-db
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PWD}
+      WORDPRESS_DB_NAME: ${MYSQL_DB}
   wp-cli:
     container_name: wp-cli
     hostname: wp-cli
@@ -50,10 +50,10 @@ services:
       - ./data/wp:/var/www/html
       - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini
     environment:
-      - WORDPRESS_DB_HOST=wp-db
-      - WORDPRESS_DB_USER=${MYSQL_USER}
-      - WORDPRESS_DB_PASSWORD=${MYSQL_PWD}
-      - WORDPRESS_DB_NAME=${MYSQL_DB}
+      WORDPRESS_DB_HOST: wp-db
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PWD}
+      WORDPRESS_DB_NAME: ${MYSQL_DB}
   pma:
     container_name: pma
     hostname: pma
@@ -68,10 +68,10 @@ services:
     volumes:
       - ./config/php.ini:/usr/local/etc/php/conf.d/conf.ini
     environment:
-      - PMA_HOST=wp-db
-      - PMA_PORT=3306
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PWD}
-      - UPLOAD_LIMIT=50M
+      PMA_HOST: wp-db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PWD}
+      UPLOAD_LIMIT: 50M
 networks:
   shared_network:
     name: shared_network
