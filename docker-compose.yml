@@ -4,8 +4,6 @@ services:
     hostname: wp-db
     image: mysql:latest
     networks: ['shared_network']
-    ports:
-      - '3306:3306'
     restart: always
     volumes:
       - ./data/wp-db:/var/lib/mysql
