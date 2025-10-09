@@ -4,9 +4,7 @@
 
 # WordPress blog service.
 blog.example.com {
-	reverse_proxy wp:80 {
-		flush_interval -1
-	}
+	reverse_proxy wp:80
 }
 
 # phpMyAdmin service.
@@ -14,7 +12,5 @@ pma.example.com {
 	# Prevents search engines from indexing this site.
 	header X-Robots-Tag "noindex, nofollow"
 
-	reverse_proxy pma:80 {
-		flush_interval -1
-	}
+	reverse_proxy pma:80
 }
