@@ -1,3 +1,4 @@
+name: wordpress
 services:
   wp-db:
     container_name: wp-db
