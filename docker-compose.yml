@@ -4,7 +4,8 @@ services:
     container_name: wp-db
     hostname: wp-db
     image: mysql:latest
-    networks: ['shared_network']
+    networks:
+      - shared_network
     restart: always
     volumes:
       - ./data/wp-db:/var/lib/mysql
@@ -22,7 +23,8 @@ services:
     container_name: wp
     hostname: wp
     image: wordpress:latest
-    networks: ['shared_network']
+    networks:
+      - shared_network
     ports:
       - '8888:80'
     restart: always
@@ -41,7 +43,8 @@ services:
     container_name: wp-cli
     hostname: wp-cli
     image: wordpress:cli
-    networks: ['shared_network']
+    networks:
+      - shared_network
     depends_on:
       wp-db:
         condition: service_healthy
@@ -59,7 +62,8 @@ services:
     container_name: pma
     hostname: pma
     image: phpmyadmin:latest
-    networks: ['shared_network']
+    networks:
+      - shared_network
     ports:
       - '8081:80'
     restart: always
